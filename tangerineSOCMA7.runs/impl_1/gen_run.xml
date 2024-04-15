@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="impl_1" LaunchPart="xc7a50tfgg484-1" LaunchTime="1713212641">
+  <File Type="ROUTE-PWR" Name="tangerineSOCMA7Top_power_routed.rpt"/>
+  <File Type="PA-TCL" Name="tangerineSOCMA7Top.tcl"/>
+  <File Type="ROUTE-PWR-SUM" Name="tangerineSOCMA7Top_power_summary_routed.pb"/>
+  <File Type="REPORTS-TCL" Name="tangerineSOCMA7Top_reports.tcl"/>
+  <File Type="OPT-RQA-PB" Name="tangerineSOCMA7Top_rqa_opted.pb"/>
+  <File Type="BITSTR-MMI" Name="tangerineSOCMA7Top.mmi"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="tangerineSOCMA7Top_methodology_drc_opted.rpt"/>
+  <File Type="INIT-TIMING" Name="tangerineSOCMA7Top_timing_summary_init.rpt"/>
+  <File Type="OPT-TIMING" Name="tangerineSOCMA7Top_timing_summary_opted.rpt"/>
+  <File Type="OPT-DCP" Name="tangerineSOCMA7Top_opt.dcp"/>
+  <File Type="OPT-DRC" Name="tangerineSOCMA7Top_drc_opted.rpt"/>
+  <File Type="OPT-HWDEF" Name="tangerineSOCMA7Top.hwdef"/>
+  <File Type="PWROPT-DCP" Name="tangerineSOCMA7Top_pwropt.dcp"/>
+  <File Type="PWROPT-DRC" Name="tangerineSOCMA7Top_drc_pwropted.rpt"/>
+  <File Type="PWROPT-TIMING" Name="tangerineSOCMA7Top_timing_summary_pwropted.rpt"/>
+  <File Type="PLACE-DCP" Name="tangerineSOCMA7Top_placed.dcp"/>
+  <File Type="PLACE-IO" Name="tangerineSOCMA7Top_io_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="tangerineSOCMA7Top_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="tangerineSOCMA7Top_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="tangerineSOCMA7Top_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="tangerineSOCMA7Top_control_sets_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="tangerineSOCMA7Top_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="tangerineSOCMA7Top_incremental_reuse_pre_placed.rpt"/>
+  <File Type="BG-BIN" Name="tangerineSOCMA7Top.bin"/>
+  <File Type="PLACE-TIMING" Name="tangerineSOCMA7Top_timing_summary_placed.rpt"/>
+  <File Type="ROUTE-PWR-RPX" Name="tangerineSOCMA7Top_power_routed.rpx"/>
+  <File Type="PLACE-RQA-PB" Name="tangerineSOCMA7Top_rqa_placed.pb"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="tangerineSOCMA7Top_postplace_pwropt.dcp"/>
+  <File Type="BITSTR-MSK" Name="tangerineSOCMA7Top.msk"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="tangerineSOCMA7Top_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="tangerineSOCMA7Top_physopt.dcp"/>
+  <File Type="PHYSOPT-DRC" Name="tangerineSOCMA7Top_drc_physopted.rpt"/>
+  <File Type="BITSTR-RBT" Name="tangerineSOCMA7Top.rbt"/>
+  <File Type="PHYSOPT-TIMING" Name="tangerineSOCMA7Top_timing_summary_physopted.rpt"/>
+  <File Type="ROUTE-ERROR-DCP" Name="tangerineSOCMA7Top_routed_error.dcp"/>
+  <File Type="ROUTE-DCP" Name="tangerineSOCMA7Top_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="tangerineSOCMA7Top_routed_bb.dcp"/>
+  <File Type="ROUTE-DRC" Name="tangerineSOCMA7Top_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="tangerineSOCMA7Top_drc_routed.pb"/>
+  <File Type="ROUTE-DRC-RPX" Name="tangerineSOCMA7Top_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="tangerineSOCMA7Top_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="tangerineSOCMA7Top_methodology_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="tangerineSOCMA7Top_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-RQS-PB" Name="tangerineSOCMA7Top_rqs_routed.pb"/>
+  <File Type="ROUTE-STATUS" Name="tangerineSOCMA7Top_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="tangerineSOCMA7Top_route_status.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="tangerineSOCMA7Top_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="tangerineSOCMA7Top_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="tangerineSOCMA7Top_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-SIMILARITY" Name="tangerineSOCMA7Top_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="tangerineSOCMA7Top_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW" Name="tangerineSOCMA7Top_bus_skew_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW-PB" Name="tangerineSOCMA7Top_bus_skew_routed.pb"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="tangerineSOCMA7Top_bus_skew_routed.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="tangerineSOCMA7Top_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="tangerineSOCMA7Top_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="dvid_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="dvid_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="dvid_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="dvid_bus_skew_postroute_physopted.rpt"/>
+  <File Type="BG-BIT" Name="tangerineSOCMA7Top.bit"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="dvid_bus_skew_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="dvid_bus_skew_postroute_physopted.rpx"/>
+  <File Type="BITSTR-NKY" Name="tangerineSOCMA7Top.nky"/>
+  <File Type="BITSTR-BMM" Name="tangerineSOCMA7Top_bd.bmm"/>
+  <File Type="PDI-FILE" Name="tangerineSOCMA7Top.pdi"/>
+  <File Type="BOOT-PDI-FILE" Name="tangerineSOCMA7Top_boot.pdi"/>
+  <File Type="PL-PDI-FILE" Name="tangerineSOCMA7Top_pld.pdi"/>
+  <File Type="RCFI_FILE" Name="tangerineSOCMA7Top.rcfi"/>
+  <File Type="CFI_FILE" Name="tangerineSOCMA7Top.cfi"/>
+  <File Type="RNPI_FILE" Name="tangerineSOCMA7Top.rnpi"/>
+  <File Type="NPI_FILE" Name="tangerineSOCMA7Top.npi"/>
+  <File Type="RBD_FILE" Name="tangerineSOCMA7Top.rbd"/>
+  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
+  <File Type="BITSTR-LTX" Name="tangerineSOCMA7Top.ltx"/>
+  <File Type="BITSTR-SYSDEF" Name="tangerineSOCMA7Top.sysdef"/>
+  <File Type="BG-BGN" Name="tangerineSOCMA7Top.bgn"/>
+  <File Type="BG-DRC" Name="tangerineSOCMA7Top.drc"/>
+  <File Type="RDI-RDI" Name="tangerineSOCMA7Top.vdi"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <File Type="ROUTE-RQS" Name="tangerineSOCMA7Top_routed.rqs"/>
+  <File Type="POSTROUTE-PHYSOPT-RQS" Name="tangerineSOCMA7Top_postroute_physopted.rqs"/>
+  <File Type="ROUTE-RQS-RPT" Name="route_report_qor_suggestions_0.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-RQS-RPT" Name="postroute_physopt_report_qor_suggestions_0.rpt"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/ip/clockingHDMI/clockingHDMI.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/picorv32.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/TMDS_encoder.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/dvid.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/InputSync.vhd">
+      <FileInfo SFType="VHDL2019">
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/pixelGenTxt.vhd">
+      <FileInfo SFType="VHDL2019">
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/uart.vhd">
+      <FileInfo SFType="VHDL2019">
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/tangerineSOCMA7Top.vhd">
+      <FileInfo SFType="VHDL2019">
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/data/font.coe">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/Software/bootloader/boot.coe">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="tangerineSOCMA7Top"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1" RelGenDir="$PGENDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/new/tangerineSOCMA7Constraints.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="TargetConstrsFile" Val="$PSRCDIR/constrs_1/new/tangerineSOCMA7Constraints.xdc"/>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1" RelGenDir="$PGENDIR/utils_1">
+    <Filter Type="Utils"/>
+    <File Path="$PSRCDIR/utils_1/imports/synth_1/tangerineSOCMA7Top.dcp">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedInSteps" Val="synth_1"/>
+        <Attr Name="AutoDcp" Val="1"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2023">
+      <Desc>Default settings for Implementation.</Desc>
+    </StratHandle>
+    <Step Id="init_design"/>
+    <Step Id="opt_design"/>
+    <Step Id="power_opt_design"/>
+    <Step Id="place_design"/>
+    <Step Id="post_place_power_opt_design"/>
+    <Step Id="phys_opt_design"/>
+    <Step Id="route_design"/>
+    <Step Id="post_route_phys_opt_design"/>
+    <Step Id="write_bitstream"/>
+  </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="systemRam"/>
+  <BlockFileSet Type="BlockSrcs" Name="fontPROM"/>
+  <BlockFileSet Type="BlockSrcs" Name="clockingSystem"/>
+  <BlockFileSet Type="BlockSrcs" Name="uartFiFo"/>
+</GenRun>

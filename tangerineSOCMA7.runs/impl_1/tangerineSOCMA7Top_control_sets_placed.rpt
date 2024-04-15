@@ -1,0 +1,143 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
+| Date         : Mon Apr 15 22:24:53 2024
+| Host         : Desktop-qUBECk running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file tangerineSOCMA7Top_control_sets_placed.rpt
+| Design       : tangerineSOCMA7Top
+| Device       : xc7a50t
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    65 |
+|    Minimum number of control sets                        |    65 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |   145 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    65 |
+| >= 0 to < 4        |     3 |
+| >= 4 to < 6        |     9 |
+| >= 6 to < 8        |     4 |
+| >= 8 to < 10       |     6 |
+| >= 10 to < 12      |     1 |
+| >= 12 to < 14      |     4 |
+| >= 14 to < 16      |     5 |
+| >= 16              |    33 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |             257 |          112 |
+| No           | No                    | Yes                    |               1 |            1 |
+| No           | Yes                   | No                     |             221 |           99 |
+| Yes          | No                    | No                     |             373 |          125 |
+| Yes          | No                    | Yes                    |              16 |            4 |
+| Yes          | Yes                   | No                     |             539 |          174 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+------------------+----------------+--------------+
+|              Clock Signal             |                                                               Enable Signal                                                              |                                                          Set/Reset Signal                                                         | Slice Load Count | Bel Load Count | Bels / Slice |
++---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+------------------+----------------+--------------+
+|  clockingSystemInst/inst/clk_out1_50  |                                                                                                                                          | UARTInst/reset                                                                                                                    |                1 |              1 |         1.00 |
+|  clockingSystemInst/inst/clk_out2_100 | UARTInst/uartTXD_i_1_n_0                                                                                                                 | UARTInst/reset                                                                                                                    |                1 |              1 |         1.00 |
+| ~clockingSystemInst/inst/clk_out1_50  |                                                                                                                                          |                                                                                                                                   |                1 |              1 |         1.00 |
+|  clockingSystemInst/inst/clk_out1_50  | picorv32Inst/pcpi_timeout_counter[3]_i_2_n_0                                                                                             | picorv32Inst/pcpi_div/SS[0]                                                                                                       |                1 |              4 |         4.00 |
+|  clockingSystemInst/inst/clk_out1_50  | picorv32Inst/mem_addr[31]_i_1_n_0                                                                                                        | picorv32Inst/mem_wstrb[3]_i_1_n_0                                                                                                 |                2 |              4 |         2.00 |
+|  clockingHDMIInst/inst/clk_out3_25    | pixelGenInst/pgLetterYCount[3]_i_1_n_0                                                                                                   | UARTInst/reset                                                                                                                    |                2 |              4 |         2.00 |
+|  clockingSystemInst/inst/clk_out2_100 | UARTInst/rxdSyncInst/stage3Reg_reg[0]_0[0]                                                                                               | UARTInst/reset                                                                                                                    |                1 |              4 |         4.00 |
+|  clockingSystemInst/inst/clk_out1_50  |                                                                                                                                          | picorv32Inst/pcpi_div/instr_rem_i_1_n_0                                                                                           |                1 |              4 |         4.00 |
+|  clockingSystemInst/inst/clk_out2_100 |                                                                                                                                          | UARTInst/reset                                                                                                                    |                4 |              4 |         1.00 |
+|  clockingSystemInst/inst/clk_out2_100 | UARTInst/FSM_sequential_txState[3]_i_1_n_0                                                                                               | UARTInst/reset                                                                                                                    |                1 |              4 |         4.00 |
+|  clockingHDMIInst/inst/clk_out3_25    | clockingHDMIInst/inst/locked                                                                                                             |                                                                                                                                   |                4 |              5 |         1.25 |
+|  clockingSystemInst/inst/clk_out1_50  | picorv32Inst/latched_rd[4]_i_1_n_0                                                                                                       | picorv32Inst/pcpi_mul/cpuResetn_reg_0                                                                                             |                2 |              5 |         2.50 |
+|  clockingHDMIInst/inst/clk_out1_125   |                                                                                                                                          | dvidInst/shift_red[9]_i_1_n_0                                                                                                     |                4 |              6 |         1.50 |
+|  clockingSystemInst/inst/clk_out1_50  | picorv32Inst/pcpi_div/E[0]                                                                                                               | picorv32Inst/cpu_state[7]_i_1_n_0                                                                                                 |                2 |              6 |         3.00 |
+|  clockingHDMIInst/inst/clk_out3_25    | pixelGenInst/FSM_sequential_pgState[5]_i_2_n_0                                                                                           | UARTInst/reset                                                                                                                    |                4 |              6 |         1.50 |
+|  clockingSystemInst/inst/clk_out2_100 | picorv32Inst/mem_wstrb_reg[2]_0                                                                                                          | picorv32Inst/mem_addr_reg[2]_0                                                                                                    |                2 |              6 |         3.00 |
+|  clockingSystemInst/inst/clk_out2_100 | UARTInst/rxFiFoInst/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.curr_fwft_state_reg[1]_0[0] | UARTInst/rxFiFoInst/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gsckt_wrst.gcc_rst.sckt_wr_rst_cc_reg[0]_0 |                2 |              8 |         4.00 |
+|  clockingSystemInst/inst/clk_out2_100 | picorv32Inst/mem_wstrb_reg[2]_1[0]                                                                                                       |                                                                                                                                   |                2 |              8 |         4.00 |
+|  clockingHDMIInst/inst/clk_out3_25    | pixelGenInst/pgLetterData[7]_i_1_n_0                                                                                                     |                                                                                                                                   |                2 |              8 |         4.00 |
+|  clockingSystemInst/inst/clk_out1_50  | picorv32Inst/is_lui_auipc_jal_jalr_addi_add_sub0                                                                                         | picorv32Inst/decoded_imm[19]_i_1_n_0                                                                                              |                3 |              8 |         2.67 |
+|  clockingSystemInst/inst/clk_out2_100 | UARTInst/txBuffer                                                                                                                        | UARTInst/reset                                                                                                                    |                2 |              8 |         4.00 |
+|  clockingSystemInst/inst/clk_out1_50  |                                                                                                                                          | tickTimerPrescalerCounter[6]                                                                                                      |                5 |              9 |         1.80 |
+|  clockingHDMIInst/inst/clk_out3_25    | pixelGenInst/fontRomA[10]_i_1_n_0                                                                                                        |                                                                                                                                   |                2 |             11 |         5.50 |
+|  clockingHDMIInst/inst/clk_out3_25    |                                                                                                                                          | pixelGenInst/pgXCount[0]_i_1_n_0                                                                                                  |                3 |             12 |         4.00 |
+|  clockingHDMIInst/inst/clk_out3_25    | pixelGenInst/pgR[7]_i_1_n_0                                                                                                              |                                                                                                                                   |               10 |             12 |         1.20 |
+|  clockingHDMIInst/inst/clk_out3_25    | pixelGenInst/pgYCount[0]_i_2_n_0                                                                                                         | pixelGenInst/pgYCount[0]_i_1_n_0                                                                                                  |                3 |             12 |         4.00 |
+|  clockingSystemInst/inst/clk_out1_50  | picorv32Inst/is_lui_auipc_jal_jalr_addi_add_sub0                                                                                         | picorv32Inst/decoded_imm[31]_i_1_n_0                                                                                              |                5 |             12 |         2.40 |
+|  clockingHDMIInst/inst/clk_out3_25    | pixelGenInst/videoRamBA[13]_i_1_n_0                                                                                                      |                                                                                                                                   |                5 |             14 |         2.80 |
+|  clockingHDMIInst/inst/clk_out3_25    | pixelGenInst/pgDisplayPtrShadow[13]_i_1_n_0                                                                                              | UARTInst/reset                                                                                                                    |                3 |             14 |         4.67 |
+|  clockingSystemInst/inst/clk_out2_100 |                                                                                                                                          | UARTInst/rxFiFoInst/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gsckt_wrst.gcc_rst.sckt_wr_rst_cc_reg[0]_0 |                6 |             14 |         2.33 |
+|  clockingHDMIInst/inst/clk_out3_25    | pixelGenInst/pgDisplayPtr[13]_i_1_n_0                                                                                                    | UARTInst/reset                                                                                                                    |                5 |             14 |         2.80 |
+|  clockingHDMIInst/inst/clk_out3_25    |                                                                                                                                          | UARTInst/reset                                                                                                                    |                7 |             15 |         2.14 |
+|  clockingSystemInst/inst/clk_out2_100 | UARTInst/rxdSyncInst/E[0]                                                                                                                | UARTInst/reset                                                                                                                    |                7 |             16 |         2.29 |
+|  clockingSystemInst/inst/clk_out2_100 | UARTInst/txBaudCounter                                                                                                                   | UARTInst/reset                                                                                                                    |                6 |             16 |         2.67 |
+|  clockingSystemInst/inst/clk_out1_50  | sel                                                                                                                                      | UARTInst/reset                                                                                                                    |                4 |             16 |         4.00 |
+|  clockingSystemInst/inst/clk_out2_100 | picorv32Inst/E[0]                                                                                                                        | UARTInst/reset                                                                                                                    |                2 |             16 |         8.00 |
+|  clockingSystemInst/inst/clk_out2_100 | UARTInst/rxFiFoInst/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/E[0]                                         | UARTInst/rxFiFoInst/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gsckt_wrst.gcc_rst.sckt_wr_rst_cc_reg[0]_0 |                3 |             16 |         5.33 |
+|  clockingSystemInst/inst/clk_out2_100 | UARTInst/rxFiFoInst/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/E[0]                                 | UARTInst/rxFiFoInst/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gsckt_wrst.gcc_rst.sckt_wr_rst_cc_reg[0]_0 |                6 |             16 |         2.67 |
+|  clockingHDMIInst/inst/clk_out3_25    | pixelGenInst/pgBackgroundColor[23]_i_1_n_0                                                                                               |                                                                                                                                   |                5 |             18 |         3.60 |
+|  clockingSystemInst/inst/clk_out1_50  | picorv32Inst/mem_rdata_q[31]_i_1_n_0                                                                                                     |                                                                                                                                   |                8 |             22 |         2.75 |
+|  clockingSystemInst/inst/clk_out1_50  | picorv32Inst/is_lui_auipc_jal_jalr_addi_add_sub0                                                                                         | picorv32Inst/pcpi_mul/cpuResetn_reg_0                                                                                             |                7 |             22 |         3.14 |
+|  clockingHDMIInst/inst/clk_out3_25    |                                                                                                                                          | dviBlank                                                                                                                          |               18 |             23 |         1.28 |
+|  clockingSystemInst/inst/clk_out1_50  |                                                                                                                                          | tickTimerPrescalerCounter[21]                                                                                                     |                8 |             23 |         2.88 |
+|  clockingSystemInst/inst/clk_out1_50  | picorv32Inst/mem_addr[31]_i_1_n_0                                                                                                        |                                                                                                                                   |               13 |             25 |         1.92 |
+|  clockingSystemInst/inst/clk_out1_50  | picorv32Inst/pcpi_div/divisor                                                                                                            | picorv32Inst/pcpi_div/divisor[30]_i_1_n_0                                                                                         |               15 |             31 |         2.07 |
+|  clockingSystemInst/inst/clk_out1_50  | picorv32Inst/mem_wdata[31]_i_1_n_0                                                                                                       |                                                                                                                                   |                7 |             32 |         4.57 |
+|  clockingSystemInst/inst/clk_out1_50  | picorv32Inst/pcpi_div/quotient_msk                                                                                                       | picorv32Inst/pcpi_div/quotient_msk[31]_i_1_n_0                                                                                    |               12 |             32 |         2.67 |
+|  clockingSystemInst/inst/clk_out1_50  | picorv32Inst/pcpi_div/dividend                                                                                                           |                                                                                                                                   |                8 |             32 |         4.00 |
+|  clockingSystemInst/inst/clk_out1_50  | picorv32Inst/pcpi_mul/E[0]                                                                                                               |                                                                                                                                   |               11 |             32 |         2.91 |
+|  clockingSystemInst/inst/clk_out1_50  | picorv32Inst/pcpi_mul/cpuResetn_reg                                                                                                      |                                                                                                                                   |                9 |             32 |         3.56 |
+|  clockingSystemInst/inst/clk_out1_50  | tickTimerCounter[0]_i_1_n_0                                                                                                              | tickTimerPrescalerCounter[6]                                                                                                      |                8 |             32 |         4.00 |
+|  clockingSystemInst/inst/clk_out1_50  | picorv32Inst/pcpi_div/quotient                                                                                                           | picorv32Inst/pcpi_div/quotient_msk[31]_i_1_n_0                                                                                    |               11 |             32 |         2.91 |
+|  clockingSystemInst/inst/clk_out1_50  | picorv32Inst/pcpi_div/divisor                                                                                                            |                                                                                                                                   |                9 |             32 |         3.56 |
+|  clockingSystemInst/inst/clk_out2_100 | picorv32Inst/mem_addr_reg[2]_2[0]                                                                                                        | UARTInst/reset                                                                                                                    |                7 |             32 |         4.57 |
+|  clockingSystemInst/inst/clk_out2_100 | picorv32Inst/mem_addr_reg[4]_0[0]                                                                                                        | UARTInst/reset                                                                                                                    |               15 |             32 |         2.13 |
+|  clockingSystemInst/inst/clk_out2_100 |                                                                                                                                          |                                                                                                                                   |               15 |             34 |         2.27 |
+|  clockingHDMIInst/inst/clk_out1_125   |                                                                                                                                          |                                                                                                                                   |                6 |             34 |         5.67 |
+|  clockingSystemInst/inst/clk_out1_50  | picorv32Inst/instr_lui0                                                                                                                  |                                                                                                                                   |               15 |             43 |         2.87 |
+|  clockingSystemInst/inst/clk_out1_50  | picorv32Inst/is_lui_auipc_jal_jalr_addi_add_sub0                                                                                         |                                                                                                                                   |               15 |             47 |         3.13 |
+|  clockingHDMIInst/inst/clk_out3_25    |                                                                                                                                          |                                                                                                                                   |               27 |             61 |         2.26 |
+|  clockingSystemInst/inst/clk_out1_50  | picorv32Inst/reg_next_pc                                                                                                                 | picorv32Inst/pcpi_mul/cpuResetn_reg_0                                                                                             |               18 |             62 |         3.44 |
+|  clockingSystemInst/inst/clk_out1_50  | picorv32Inst/count_instr                                                                                                                 | picorv32Inst/pcpi_mul/cpuResetn_reg_0                                                                                             |               16 |             64 |         4.00 |
+|  clockingSystemInst/inst/clk_out1_50  | picorv32Inst/cpuregs_reg_r1_0_31_0_5_i_1_n_0                                                                                             |                                                                                                                                   |               11 |             88 |         8.00 |
+|  clockingSystemInst/inst/clk_out1_50  |                                                                                                                                          | picorv32Inst/pcpi_mul/cpuResetn_reg_0                                                                                             |               43 |            111 |         2.58 |
+|  clockingSystemInst/inst/clk_out1_50  |                                                                                                                                          |                                                                                                                                   |               63 |            128 |         2.03 |
++---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+------------------+----------------+--------------+
+
+
