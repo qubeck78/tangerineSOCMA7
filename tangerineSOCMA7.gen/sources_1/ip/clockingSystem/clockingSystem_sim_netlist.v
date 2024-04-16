@@ -2,7 +2,7 @@
 // Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
-// Date        : Mon Apr 15 18:32:37 2024
+// Date        : Tue Apr 16 22:39:32 2024
 // Host        : Desktop-qUBECk running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
 //               c:/Users/qubec/Documents/Development/ProjektyVHDL/MimasA7/tangerineSOCMA7/tangerineSOCMA7.gen/sources_1/ip/clockingSystem/clockingSystem_sim_netlist.v
@@ -17,11 +17,13 @@
 module clockingSystem
    (clk_out1_50,
     clk_out2_100,
+    clk_out3_200,
     reset,
     locked,
     clk_in1);
   output clk_out1_50;
   output clk_out2_100;
+  output clk_out3_200;
   input reset;
   output locked;
   input clk_in1;
@@ -29,6 +31,7 @@ module clockingSystem
   wire clk_in1;
   wire clk_out1_50;
   wire clk_out2_100;
+  wire clk_out3_200;
   wire locked;
   wire reset;
 
@@ -36,6 +39,7 @@ module clockingSystem
        (.clk_in1(clk_in1),
         .clk_out1_50(clk_out1_50),
         .clk_out2_100(clk_out2_100),
+        .clk_out3_200(clk_out3_200),
         .locked(locked),
         .reset(reset));
 endmodule
@@ -43,11 +47,13 @@ endmodule
 module clockingSystem_clk_wiz
    (clk_out1_50,
     clk_out2_100,
+    clk_out3_200,
     reset,
     locked,
     clk_in1);
   output clk_out1_50;
   output clk_out2_100;
+  output clk_out3_200;
   input reset;
   output locked;
   input clk_in1;
@@ -58,6 +64,8 @@ module clockingSystem_clk_wiz
   wire clk_out1_50_clockingSystem;
   wire clk_out2_100;
   wire clk_out2_100_clockingSystem;
+  wire clk_out3_200;
+  wire clk_out3_200_clockingSystem;
   wire clkfbout_buf_clockingSystem;
   wire clkfbout_clockingSystem;
   wire locked;
@@ -67,7 +75,6 @@ module clockingSystem_clk_wiz
   wire NLW_mmcm_adv_inst_CLKINSTOPPED_UNCONNECTED;
   wire NLW_mmcm_adv_inst_CLKOUT0B_UNCONNECTED;
   wire NLW_mmcm_adv_inst_CLKOUT1B_UNCONNECTED;
-  wire NLW_mmcm_adv_inst_CLKOUT2_UNCONNECTED;
   wire NLW_mmcm_adv_inst_CLKOUT2B_UNCONNECTED;
   wire NLW_mmcm_adv_inst_CLKOUT3_UNCONNECTED;
   wire NLW_mmcm_adv_inst_CLKOUT3B_UNCONNECTED;
@@ -95,6 +102,10 @@ module clockingSystem_clk_wiz
        (.I(clk_out2_100_clockingSystem),
         .O(clk_out2_100));
   (* BOX_TYPE = "PRIMITIVE" *) 
+  BUFG clkout3_buf
+       (.I(clk_out3_200_clockingSystem),
+        .O(clk_out3_200));
+  (* BOX_TYPE = "PRIMITIVE" *) 
   MMCME2_ADV #(
     .BANDWIDTH("OPTIMIZED"),
     .CLKFBOUT_MULT_F(10.000000),
@@ -110,7 +121,7 @@ module clockingSystem_clk_wiz
     .CLKOUT1_DUTY_CYCLE(0.500000),
     .CLKOUT1_PHASE(0.000000),
     .CLKOUT1_USE_FINE_PS("FALSE"),
-    .CLKOUT2_DIVIDE(1),
+    .CLKOUT2_DIVIDE(5),
     .CLKOUT2_DUTY_CYCLE(0.500000),
     .CLKOUT2_PHASE(0.000000),
     .CLKOUT2_USE_FINE_PS("FALSE"),
@@ -157,7 +168,7 @@ module clockingSystem_clk_wiz
         .CLKOUT0B(NLW_mmcm_adv_inst_CLKOUT0B_UNCONNECTED),
         .CLKOUT1(clk_out2_100_clockingSystem),
         .CLKOUT1B(NLW_mmcm_adv_inst_CLKOUT1B_UNCONNECTED),
-        .CLKOUT2(NLW_mmcm_adv_inst_CLKOUT2_UNCONNECTED),
+        .CLKOUT2(clk_out3_200_clockingSystem),
         .CLKOUT2B(NLW_mmcm_adv_inst_CLKOUT2B_UNCONNECTED),
         .CLKOUT3(NLW_mmcm_adv_inst_CLKOUT3_UNCONNECTED),
         .CLKOUT3B(NLW_mmcm_adv_inst_CLKOUT3B_UNCONNECTED),

@@ -33,20 +33,39 @@ use UNISIM.VComponents.all;
 entity tangerineSOCMA7Top is
 port(
     
-    clk_in_100: in  std_logic;
-    reset_in:   in  std_logic;
+    clk_in_100:     in  std_logic;
+    reset_in:       in  std_logic;
 
     --hdmi
-    data_p:     out std_logic_vector(2 downto 0);
-    data_n:     out std_logic_vector(2 downto 0);
-    clk_p:      out std_logic;
-    clk_n:      out std_logic;
+    data_p:         out std_logic_vector(2 downto 0);
+    data_n:         out std_logic_vector(2 downto 0);
+    clk_p:          out std_logic;
+    clk_n:          out std_logic;
            
     --uart
-    uart_tx:    out std_logic;
-    uart_rx:    in  std_logic;
-           
-    leds:       out std_logic_vector( 7 downto 0 )
+    uart_tx:        out std_logic;
+    uart_rx:        in  std_logic;
+    
+    
+    --ddr3
+    ddr3_dq:        inout std_logic_vector( 15 downto 0 );
+    ddr3_addr:      out std_logic_vector( 13 downto 0 );
+    ddr3_ba:        out std_logic_vector( 2 downto 0 );
+    ddr3_ras_n:     out std_logic;
+    ddr3_cas_n:     out std_logic;
+    ddr3_we_n:      out std_logic;
+    ddr3_reset_n:   out std_logic;
+    ddr3_cke:       out std_logic_vector( 0 downto 0 );
+    ddr3_odt:       out std_logic_vector( 0 downto 0 );
+    ddr3_cs_n:      out std_logic_vector( 0 downto 0 );
+    ddr3_dm:        out std_logic_vector( 1 downto 0 );
+    ddr3_dqs_p:     inout std_logic_vector( 1 downto 0 );
+    ddr3_dqs_n:     inout std_logic_vector( 1 downto 0 );
+    ddr3_ck_p:      out std_logic_vector( 0 downto 0 );
+    ddr3_ck_n:      out std_logic_vector( 0 downto 0 );
+
+    --leds    
+    leds:           out std_logic_vector( 7 downto 0 )
 
 );
 end tangerineSOCMA7Top;
@@ -82,6 +101,7 @@ port
     -- Clock out ports
     clk_out1_50:    out    std_logic;
     clk_out2_100:   out    std_logic;
+    clk_out3_200:   out    std_logic;
   
     -- Status and control signals
     reset:          in     std_logic;
@@ -233,6 +253,51 @@ component UART
     );
 end component;
 
+component migDDR3
+  port (
+      ddr3_dq       : inout std_logic_vector(15 downto 0);
+      ddr3_dqs_p    : inout std_logic_vector(1 downto 0);
+      ddr3_dqs_n    : inout std_logic_vector(1 downto 0);
+
+      ddr3_addr     : out   std_logic_vector(13 downto 0);
+      ddr3_ba       : out   std_logic_vector(2 downto 0);
+      ddr3_ras_n    : out   std_logic;
+      ddr3_cas_n    : out   std_logic;
+      ddr3_we_n     : out   std_logic;
+      ddr3_reset_n  : out   std_logic;
+      ddr3_ck_p     : out   std_logic_vector(0 downto 0);
+      ddr3_ck_n     : out   std_logic_vector(0 downto 0);
+      ddr3_cke      : out   std_logic_vector(0 downto 0);
+	  ddr3_cs_n     : out   std_logic_vector(0 downto 0);
+      ddr3_dm       : out   std_logic_vector(1 downto 0);
+      ddr3_odt      : out   std_logic_vector(0 downto 0);
+      app_addr                  : in    std_logic_vector(27 downto 0);
+      app_cmd                   : in    std_logic_vector(2 downto 0);
+      app_en                    : in    std_logic;
+      app_wdf_data              : in    std_logic_vector(127 downto 0);
+      app_wdf_end               : in    std_logic;
+      app_wdf_mask         : in    std_logic_vector(15 downto 0);
+      app_wdf_wren              : in    std_logic;
+      app_rd_data               : out   std_logic_vector(127 downto 0);
+      app_rd_data_end           : out   std_logic;
+      app_rd_data_valid         : out   std_logic;
+      app_rdy                   : out   std_logic;
+      app_wdf_rdy               : out   std_logic;
+      app_sr_req                : in    std_logic;
+      app_ref_req               : in    std_logic;
+      app_zq_req                : in    std_logic;
+      app_sr_active             : out   std_logic;
+      app_ref_ack               : out   std_logic;
+      app_zq_ack                : out   std_logic;
+      ui_clk                    : out   std_logic;
+      ui_clk_sync_rst           : out   std_logic;
+      init_calib_complete       : out   std_logic;
+      -- System Clock Ports
+      sys_clk_i                      : in    std_logic;
+    sys_rst                     : in    std_logic
+  );
+end component migDDR3;
+ 
 -- clocks
 
 -- domain 1 - pllHDMI
@@ -244,6 +309,7 @@ signal pllHDMILocked:       std_logic;
 -- domain 2 - pllSystem
 signal clkd2_50:            std_logic;
 signal clkd2_100:           std_logic;
+signal clkd2_200:           std_logic;
 
 -- reset
 signal reset:               std_logic;
@@ -418,8 +484,9 @@ port map(
     reset           => reset_in,
 
     clk_out1_50     => clkd2_50,
-    clk_out2_100    => clkd2_100
-  
+    clk_out2_100    => clkd2_100,
+    clk_out3_200    => clkd2_200
+    
     -- Status and control signals
     --locked:         out    std_logic;
 
@@ -940,6 +1007,56 @@ port map(
   uartRXD  => uartRXD
   
 );  
+
+
+--Place MIG
+
+migDDR3Inst:migDDR3
+  port map(
+      ddr3_dq           => ddr3_dq,
+      ddr3_dqs_p        => ddr3_dqs_p,
+      ddr3_dqs_n        => ddr3_dqs_n,
+
+      ddr3_addr         => ddr3_addr,
+      ddr3_ba           => ddr3_ba,
+      ddr3_ras_n        => ddr3_ras_n,
+      ddr3_cas_n        => ddr3_cas_n,
+      ddr3_we_n         => ddr3_we_n,
+      ddr3_reset_n      => ddr3_reset_n,
+      ddr3_ck_p         => ddr3_ck_p,
+      ddr3_ck_n         => ddr3_ck_n,
+      ddr3_cke          => ddr3_cke,
+	  ddr3_cs_n         => ddr3_cs_n,
+      ddr3_dm           => ddr3_dm,
+      ddr3_odt          => ddr3_odt,
+      
+      app_addr          => ( others => '0' ),   --std_logic_vector(27 downto 0);
+      app_cmd           => ( others => '0' ),   --std_logic_vector(2 downto 0);
+      app_en            => '0',
+      app_wdf_data      => ( others => '0' ),   --std_logic_vector(127 downto 0);
+      app_wdf_end       => '0',
+      app_wdf_mask      => ( others => '0' ),   --std_logic_vector(15 downto 0);
+      app_wdf_wren      => '0',
+      
+      --app_rd_data               : out   std_logic_vector(127 downto 0);
+      --app_rd_data_end           : out   std_logic;
+      --app_rd_data_valid         : out   std_logic;
+      --app_rdy                   : out   std_logic;
+      --app_wdf_rdy               : out   std_logic;
+      
+      app_sr_req        => '0',
+      app_ref_req       => '0',
+      app_zq_req        => '0',
+      --app_sr_active             : out   std_logic;
+      --app_ref_ack               : out   std_logic;
+      --app_zq_ack                : out   std_logic;
+      --ui_clk                    : out   std_logic;
+      --ui_clk_sync_rst           : out   std_logic;
+      --init_calib_complete       : out   std_logic;
+      -- System Clock Ports
+      sys_clk_i         => clkd2_200,
+      sys_rst           => reset
+  );
 
 
 end Behavioral;

@@ -54,6 +54,7 @@
 ------------------------------------------------------------------------------
 -- clk_out1_50__50.00000______0.000______50.0______151.636_____98.575
 -- clk_out2_100__100.00000______0.000______50.0______130.958_____98.575
+-- clk_out3_200__200.00000______0.000______50.0______114.829_____98.575
 --
 ------------------------------------------------------------------------------
 -- Input Clock   Freq (MHz)    Input Jitter (UI)
@@ -69,6 +70,7 @@ port
   -- Clock out ports
   clk_out1_50          : out    std_logic;
   clk_out2_100          : out    std_logic;
+  clk_out3_200          : out    std_logic;
   -- Status and control signals
   reset             : in     std_logic;
   locked            : out    std_logic;
@@ -85,6 +87,7 @@ your_instance_name : clockingSystem
   -- Clock out ports  
    clk_out1_50 => clk_out1_50,
    clk_out2_100 => clk_out2_100,
+   clk_out3_200 => clk_out3_200,
   -- Status and control signals                
    reset => reset,
    locked => locked,

@@ -3,8 +3,8 @@
 # SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
 # IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
 # SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
-# Start of session at: Mon Apr 15 18:31:57 2024
-# Process ID: 22368
+# Start of session at: Tue Apr 16 22:38:51 2024
+# Process ID: 3180
 # Current directory: C:/Users/qubec/Documents/Development/ProjektyVHDL/MimasA7/tangerineSOCMA7/tangerineSOCMA7.runs/clockingSystem_synth_1
 # Command line: vivado.exe -log clockingSystem.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source clockingSystem.tcl
 # Log file: C:/Users/qubec/Documents/Development/ProjektyVHDL/MimasA7/tangerineSOCMA7/tangerineSOCMA7.runs/clockingSystem_synth_1/clockingSystem.vds
@@ -12,7 +12,7 @@
 # Running On: Desktop-qUBECk, OS: Windows, CPU Frequency: 4104 MHz, CPU Physical cores: 6, Host memory: 34266 MB
 #-----------------------------------------------------------
 source clockingSystem.tcl -notrace
-create_project: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 534.766 ; gain = 180.336
+create_project: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 533.527 ; gain = 181.633
 INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: clockingSystem
 Command: synth_design -top clockingSystem -part xc7a50tfgg484-1 -incremental_mode off -mode out_of_context
 Starting synth_design
@@ -21,12 +21,12 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a50t
 INFO: [Device 21-403] Loading part xc7a50tfgg484-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 19204
+INFO: [Synth 8-7075] Helper process launched with PID 11892
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1377.359 ; gain = 438.484
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1377.180 ; gain = 438.941
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6157] synthesizing module 'clockingSystem' [c:/Users/qubec/Documents/Development/ProjektyVHDL/MimasA7/tangerineSOCMA7/tangerineSOCMA7.gen/sources_1/ip/clockingSystem/clockingSystem.v:66]
-INFO: [Synth 8-6157] synthesizing module 'clockingSystem_clk_wiz' [c:/Users/qubec/Documents/Development/ProjektyVHDL/MimasA7/tangerineSOCMA7/tangerineSOCMA7.gen/sources_1/ip/clockingSystem/clockingSystem_clk_wiz.v:66]
+INFO: [Synth 8-6157] synthesizing module 'clockingSystem' [c:/Users/qubec/Documents/Development/ProjektyVHDL/MimasA7/tangerineSOCMA7/tangerineSOCMA7.gen/sources_1/ip/clockingSystem/clockingSystem.v:67]
+INFO: [Synth 8-6157] synthesizing module 'clockingSystem_clk_wiz' [c:/Users/qubec/Documents/Development/ProjektyVHDL/MimasA7/tangerineSOCMA7/tangerineSOCMA7.gen/sources_1/ip/clockingSystem/clockingSystem_clk_wiz.v:67]
 INFO: [Synth 8-6157] synthesizing module 'BUFG' [F:/Xilinx/Vivado/2023.2/scripts/rt/data/unisim_comp.v:1951]
 INFO: [Synth 8-6155] done synthesizing module 'BUFG' (0#1) [F:/Xilinx/Vivado/2023.2/scripts/rt/data/unisim_comp.v:1951]
 INFO: [Synth 8-6157] synthesizing module 'MMCME2_ADV' [F:/Xilinx/Vivado/2023.2/scripts/rt/data/unisim_comp.v:82174]
@@ -43,26 +43,30 @@ INFO: [Synth 8-6157] synthesizing module 'MMCME2_ADV' [F:/Xilinx/Vivado/2023.2/s
 	Parameter CLKOUT1_DUTY_CYCLE bound to: 0.500000 - type: double 
 	Parameter CLKOUT1_PHASE bound to: 0.000000 - type: double 
 	Parameter CLKOUT1_USE_FINE_PS bound to: FALSE - type: string 
+	Parameter CLKOUT2_DIVIDE bound to: 5 - type: integer 
+	Parameter CLKOUT2_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT2_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT2_USE_FINE_PS bound to: FALSE - type: string 
 	Parameter CLKOUT4_CASCADE bound to: FALSE - type: string 
 	Parameter COMPENSATION bound to: ZHOLD - type: string 
 	Parameter DIVCLK_DIVIDE bound to: 1 - type: integer 
 	Parameter STARTUP_WAIT bound to: FALSE - type: string 
 INFO: [Synth 8-6155] done synthesizing module 'MMCME2_ADV' (0#1) [F:/Xilinx/Vivado/2023.2/scripts/rt/data/unisim_comp.v:82174]
-INFO: [Synth 8-6155] done synthesizing module 'clockingSystem_clk_wiz' (0#1) [c:/Users/qubec/Documents/Development/ProjektyVHDL/MimasA7/tangerineSOCMA7/tangerineSOCMA7.gen/sources_1/ip/clockingSystem/clockingSystem_clk_wiz.v:66]
-INFO: [Synth 8-6155] done synthesizing module 'clockingSystem' (0#1) [c:/Users/qubec/Documents/Development/ProjektyVHDL/MimasA7/tangerineSOCMA7/tangerineSOCMA7.gen/sources_1/ip/clockingSystem/clockingSystem.v:66]
+INFO: [Synth 8-6155] done synthesizing module 'clockingSystem_clk_wiz' (0#1) [c:/Users/qubec/Documents/Development/ProjektyVHDL/MimasA7/tangerineSOCMA7/tangerineSOCMA7.gen/sources_1/ip/clockingSystem/clockingSystem_clk_wiz.v:67]
+INFO: [Synth 8-6155] done synthesizing module 'clockingSystem' (0#1) [c:/Users/qubec/Documents/Development/ProjektyVHDL/MimasA7/tangerineSOCMA7/tangerineSOCMA7.gen/sources_1/ip/clockingSystem/clockingSystem.v:67]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1488.375 ; gain = 549.500
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1488.691 ; gain = 550.453
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1488.375 ; gain = 549.500
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1488.691 ; gain = 550.453
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1488.375 ; gain = 549.500
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1488.691 ; gain = 550.453
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1488.375 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1488.691 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -79,32 +83,32 @@ Parsing XDC File [C:/Users/qubec/Documents/Development/ProjektyVHDL/MimasA7/tang
 Finished Parsing XDC File [C:/Users/qubec/Documents/Development/ProjektyVHDL/MimasA7/tangerineSOCMA7/tangerineSOCMA7.runs/clockingSystem_synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1496.695 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1498.301 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Timing 38-2] Deriving generated clocks
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.032 . Memory (MB): peak = 1496.695 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.033 . Memory (MB): peak = 1498.301 ; gain = 0.000
 INFO: [Designutils 20-5008] Incremental synthesis strategy off
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1496.695 ; gain = 557.820
+Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 1498.301 ; gain = 560.062
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a50tfgg484-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1496.695 ; gain = 557.820
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 1498.301 ; gain = 560.062
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 Applied set_property KEEP_HIERARCHY = SOFT for inst. (constraint file  C:/Users/qubec/Documents/Development/ProjektyVHDL/MimasA7/tangerineSOCMA7/tangerineSOCMA7.runs/clockingSystem_synth_1/dont_touch.xdc, line 9).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1496.695 ; gain = 557.820
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 1498.301 ; gain = 560.062
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1496.695 ; gain = 557.820
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1498.301 ; gain = 560.062
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -127,25 +131,25 @@ Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1496.695 ; gain = 557.820
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 1498.301 ; gain = 560.062
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 1496.695 ; gain = 557.820
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 1498.301 ; gain = 560.062
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 1496.695 ; gain = 557.820
+Finished Timing Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 1498.301 ; gain = 560.062
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 1496.695 ; gain = 557.820
+Finished Technology Mapping : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 1498.301 ; gain = 560.062
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -163,37 +167,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1496.695 ; gain = 557.820
+Finished IO Insertion : Time (s): cpu = 00:00:24 ; elapsed = 00:00:27 . Memory (MB): peak = 1498.301 ; gain = 560.062
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1496.695 ; gain = 557.820
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:24 ; elapsed = 00:00:27 . Memory (MB): peak = 1498.301 ; gain = 560.062
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1496.695 ; gain = 557.820
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:24 ; elapsed = 00:00:27 . Memory (MB): peak = 1498.301 ; gain = 560.062
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1496.695 ; gain = 557.820
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:24 ; elapsed = 00:00:27 . Memory (MB): peak = 1498.301 ; gain = 560.062
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1496.695 ; gain = 557.820
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:24 ; elapsed = 00:00:27 . Memory (MB): peak = 1498.301 ; gain = 560.062
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1496.695 ; gain = 557.820
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:24 ; elapsed = 00:00:27 . Memory (MB): peak = 1498.301 ; gain = 560.062
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -209,32 +213,32 @@ Report Cell Usage:
 +------+-----------+------+
 |      |Cell       |Count |
 +------+-----------+------+
-|1     |BUFG       |     4|
+|1     |BUFG       |     5|
 |2     |MMCME2_ADV |     1|
 +------+-----------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1496.695 ; gain = 557.820
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:24 ; elapsed = 00:00:27 . Memory (MB): peak = 1498.301 ; gain = 560.062
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:17 ; elapsed = 00:00:25 . Memory (MB): peak = 1496.695 ; gain = 549.500
-Synthesis Optimization Complete : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 1496.695 ; gain = 557.820
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:16 ; elapsed = 00:00:25 . Memory (MB): peak = 1498.301 ; gain = 550.453
+Synthesis Optimization Complete : Time (s): cpu = 00:00:24 ; elapsed = 00:00:27 . Memory (MB): peak = 1498.301 ; gain = 560.062
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1496.695 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1498.301 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1501.812 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1509.590 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Synth Design complete | Checksum: 25a71c52
+Synth Design complete | Checksum: 5c59b196
 INFO: [Common 17-83] Releasing license: Synthesis
 27 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:29 ; elapsed = 00:00:31 . Memory (MB): peak = 1501.812 ; gain = 954.328
+synth_design: Time (s): cpu = 00:00:28 ; elapsed = 00:00:31 . Memory (MB): peak = 1509.590 ; gain = 963.461
 INFO: [Common 17-1381] The checkpoint 'C:/Users/qubec/Documents/Development/ProjektyVHDL/MimasA7/tangerineSOCMA7/tangerineSOCMA7.runs/clockingSystem_synth_1/clockingSystem.dcp' has been generated.
-INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP clockingSystem, cache-ID = f194022d64cf7c03
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP clockingSystem, cache-ID = 9b5f003ce6b83883
 INFO: [Common 17-1381] The checkpoint 'C:/Users/qubec/Documents/Development/ProjektyVHDL/MimasA7/tangerineSOCMA7/tangerineSOCMA7.runs/clockingSystem_synth_1/clockingSystem.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file clockingSystem_utilization_synth.rpt -pb clockingSystem_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Mon Apr 15 18:32:37 2024...
+INFO: [Common 17-206] Exiting Vivado at Tue Apr 16 22:39:32 2024...

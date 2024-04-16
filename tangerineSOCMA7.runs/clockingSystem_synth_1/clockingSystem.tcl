@@ -70,10 +70,7 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "clockingSystem_synth_1" START { ROLLUP_AUTO }
-set_param checkpoint.writeSynthRtdsInDcp 1
 set_param chipscope.maxJobs 3
-set_msg_config -id {Synth 8-256} -limit 10000
-set_msg_config -id {Synth 8-638} -limit 10000
 set_param project.vivado.isBlockSynthRun true
 set_msg_config -msgmgr_mode ooc_run
 OPTRACE "Creating in-memory project" START { }
@@ -93,7 +90,7 @@ set_property ip_output_repo c:/Users/qubec/Documents/Development/ProjektyVHDL/Mi
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-read_ip -quiet c:/Users/qubec/Documents/Development/ProjektyVHDL/MimasA7/tangerineSOCMA7/tangerineSOCMA7.srcs/sources_1/ip/clockingSystem/clockingSystem.xci
+read_ip -quiet C:/Users/qubec/Documents/Development/ProjektyVHDL/MimasA7/tangerineSOCMA7/tangerineSOCMA7.srcs/sources_1/ip/clockingSystem/clockingSystem.xci
 set_property used_in_implementation false [get_files -all c:/Users/qubec/Documents/Development/ProjektyVHDL/MimasA7/tangerineSOCMA7/tangerineSOCMA7.gen/sources_1/ip/clockingSystem/clockingSystem_board.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/qubec/Documents/Development/ProjektyVHDL/MimasA7/tangerineSOCMA7/tangerineSOCMA7.gen/sources_1/ip/clockingSystem/clockingSystem.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/qubec/Documents/Development/ProjektyVHDL/MimasA7/tangerineSOCMA7/tangerineSOCMA7.gen/sources_1/ip/clockingSystem/clockingSystem_ooc.xdc]

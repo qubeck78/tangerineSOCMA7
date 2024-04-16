@@ -1,0 +1,7 @@
+vhdl xil_defaultlib  \
+"../../../../tangerineSOCMA7.gen/sources_1/ip/migDDR3/migDDR3/user_design/rtl/phy/mig_7series_v4_2_ddr_phy_top.vhd" \
+"../../../../tangerineSOCMA7.gen/sources_1/ip/migDDR3/migDDR3/user_design/rtl/migDDR3_mig_sim.vhd" \
+"../../../../tangerineSOCMA7.gen/sources_1/ip/migDDR3/migDDR3/user_design/rtl/migDDR3.vhd" \
+
+# Do not sort compile order
+nosort

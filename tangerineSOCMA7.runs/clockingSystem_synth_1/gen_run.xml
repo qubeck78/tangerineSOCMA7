@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="clockingSystem_synth_1" LaunchPart="xc7a50tfgg484-1" LaunchTime="1713198713">
+<GenRun Id="clockingSystem_synth_1" LaunchPart="xc7a50tfgg484-1" LaunchTime="1713299927">
   <File Type="PA-TCL" Name="clockingSystem.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="clockingSystem_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="clockingSystem_reports.tcl"/>
@@ -50,9 +50,7 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2023">
-      <Desc>Vivado Synthesis Defaults</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2023"/>
     <Step Id="synth_design"/>
   </Strategy>
 </GenRun>

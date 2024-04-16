@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
-| Date         : Mon Apr 15 22:25:22 2024
+| Date         : Tue Apr 16 23:04:23 2024
 | Host         : Desktop-qUBECk running 64-bit major release  (build 9200)
 | Command      : report_methodology -file tangerineSOCMA7Top_methodology_drc_routed.rpt -pb tangerineSOCMA7Top_methodology_drc_routed.pb -rpx tangerineSOCMA7Top_methodology_drc_routed.rpx
 | Design       : tangerineSOCMA7Top
@@ -23,16 +23,39 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 14
-+-----------+----------+-------------------------------+------------+
-| Rule      | Severity | Description                   | Violations |
-+-----------+----------+-------------------------------+------------+
-| SYNTH-10  | Warning  | Wide multiplier               | 4          |
-| TIMING-18 | Warning  | Missing input or output delay | 10         |
-+-----------+----------+-------------------------------+------------+
+             Violations found: 33
++-----------+----------+---------------------------------------------+------------+
+| Rule      | Severity | Description                                 | Violations |
++-----------+----------+---------------------------------------------+------------+
+| LUTAR-1   | Warning  | LUT drives async reset alert                | 1          |
+| SYNTH-10  | Warning  | Wide multiplier                             | 4          |
+| TIMING-18 | Warning  | Missing input or output delay               | 11         |
+| XDCB-5    | Warning  | Runtime inefficient way to find pin objects | 1          |
+| REQP-1959 | Advisory | connects_SERDES_RST_driver_not_FF           | 16         |
++-----------+----------+---------------------------------------------+------------+
 
 2. REPORT DETAILS
 -----------------
+LUTAR-1#1 Warning
+LUT drives async reset alert  
+LUT cell migDDR3Inst/u_migDDR3_mig/u_iodelay_ctrl/rstdiv2_sync_r[11]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) migDDR3Inst/u_migDDR3_mig/u_ddr3_infrastructure/rstdiv0_sync_r1_reg_rep__7/PRE,
+migDDR3Inst/u_migDDR3_mig/u_ddr3_infrastructure/rstdiv0_sync_r1_reg_rep__8/PRE,
+migDDR3Inst/u_migDDR3_mig/u_ddr3_infrastructure/rstdiv0_sync_r1_reg_rep__9/PRE,
+migDDR3Inst/u_migDDR3_mig/u_ddr3_infrastructure/rstdiv0_sync_r_reg[0]/PRE,
+migDDR3Inst/u_migDDR3_mig/u_ddr3_infrastructure/rstdiv0_sync_r_reg[10]/PRE,
+migDDR3Inst/u_migDDR3_mig/u_ddr3_infrastructure/rstdiv0_sync_r_reg[11]/PRE,
+migDDR3Inst/u_migDDR3_mig/u_ddr3_infrastructure/rstdiv0_sync_r_reg[1]/PRE,
+migDDR3Inst/u_migDDR3_mig/u_ddr3_infrastructure/rstdiv0_sync_r_reg[2]/PRE,
+migDDR3Inst/u_migDDR3_mig/u_ddr3_infrastructure/rstdiv0_sync_r_reg[3]/PRE,
+migDDR3Inst/u_migDDR3_mig/u_ddr3_infrastructure/rstdiv0_sync_r_reg[4]/PRE,
+migDDR3Inst/u_migDDR3_mig/u_ddr3_infrastructure/rstdiv0_sync_r_reg[5]/PRE,
+migDDR3Inst/u_migDDR3_mig/u_ddr3_infrastructure/rstdiv0_sync_r_reg[6]/PRE,
+migDDR3Inst/u_migDDR3_mig/u_ddr3_infrastructure/rstdiv0_sync_r_reg[7]/PRE,
+migDDR3Inst/u_migDDR3_mig/u_ddr3_infrastructure/rstdiv0_sync_r_reg[8]/PRE,
+migDDR3Inst/u_migDDR3_mig/u_ddr3_infrastructure/rstdiv0_sync_r_reg[9]/PRE
+ (the first 15 of 34 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
 SYNTH-10#1 Warning
 Wide multiplier  
 Detected multiplier at picorv32Inst/pcpi_mul/rd0 of size 16x18, it is decomposed from a wide multipler into 4 DSP blocks.
@@ -60,47 +83,138 @@ Related violations: <none>
 
 TIMING-18#2 Warning
 Missing input or output delay  
-An output delay is missing on leds[0] relative to the rising and/or falling clock edge(s) of clk_in_100.
+An output delay is missing on ddr3_reset_n relative to the rising and/or falling clock edge(s) of clk_in_100.
 Related violations: <none>
 
 TIMING-18#3 Warning
 Missing input or output delay  
-An output delay is missing on leds[1] relative to the rising and/or falling clock edge(s) of clk_in_100.
+An output delay is missing on leds[0] relative to the rising and/or falling clock edge(s) of clk_in_100.
 Related violations: <none>
 
 TIMING-18#4 Warning
 Missing input or output delay  
-An output delay is missing on leds[2] relative to the rising and/or falling clock edge(s) of clk_in_100.
+An output delay is missing on leds[1] relative to the rising and/or falling clock edge(s) of clk_in_100.
 Related violations: <none>
 
 TIMING-18#5 Warning
 Missing input or output delay  
-An output delay is missing on leds[3] relative to the rising and/or falling clock edge(s) of clk_in_100.
+An output delay is missing on leds[2] relative to the rising and/or falling clock edge(s) of clk_in_100.
 Related violations: <none>
 
 TIMING-18#6 Warning
 Missing input or output delay  
-An output delay is missing on leds[4] relative to the rising and/or falling clock edge(s) of clk_in_100.
+An output delay is missing on leds[3] relative to the rising and/or falling clock edge(s) of clk_in_100.
 Related violations: <none>
 
 TIMING-18#7 Warning
 Missing input or output delay  
-An output delay is missing on leds[5] relative to the rising and/or falling clock edge(s) of clk_in_100.
+An output delay is missing on leds[4] relative to the rising and/or falling clock edge(s) of clk_in_100.
 Related violations: <none>
 
 TIMING-18#8 Warning
 Missing input or output delay  
-An output delay is missing on leds[6] relative to the rising and/or falling clock edge(s) of clk_in_100.
+An output delay is missing on leds[5] relative to the rising and/or falling clock edge(s) of clk_in_100.
 Related violations: <none>
 
 TIMING-18#9 Warning
 Missing input or output delay  
-An output delay is missing on leds[7] relative to the rising and/or falling clock edge(s) of clk_in_100.
+An output delay is missing on leds[6] relative to the rising and/or falling clock edge(s) of clk_in_100.
 Related violations: <none>
 
 TIMING-18#10 Warning
 Missing input or output delay  
+An output delay is missing on leds[7] relative to the rising and/or falling clock edge(s) of clk_in_100.
+Related violations: <none>
+
+TIMING-18#11 Warning
+Missing input or output delay  
 An output delay is missing on uart_tx relative to the rising and/or falling clock edge(s) of clk_in_100.
+Related violations: <none>
+
+XDCB-5#1 Warning
+Runtime inefficient way to find pin objects  
+The option '-to : [get_pins -hier -include_replicated_objects -filter {NAME =~ *temp_mon_enabled.u_tempmon/device_temp_sync_r1_reg[*]/D}]' of constraint 'set_max_delay' uses inefficient query to find pin objects (see constraint position '6' in the Timing Constraint window in Vivado IDE). To reduce runtime, it is recommended to get the pins through the cell objects. Please refer to Using Constraints Guide (Constraints Efficiency). An example of optimal query is: get_pins -filter {REF_PIN_NAME=~yy*} -of_objects [get_cells -hierarchical xx*].
+Current XDC: c:/Users/qubec/Documents/Development/ProjektyVHDL/MimasA7/tangerineSOCMA7/tangerineSOCMA7.gen/sources_1/ip/migDDR3/migDDR3/user_design/constraints/migDDR3.xdc (Line: 354)
+Related violations: <none>
+
+REQP-1959#1 Advisory
+connects_SERDES_RST_driver_not_FF  
+migDDR3Inst/u_migDDR3_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_A.ddr_byte_lane_A/ddr_byte_group_io/input_[1].iserdes_dq_.iserdesdq: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+REQP-1959#2 Advisory
+connects_SERDES_RST_driver_not_FF  
+migDDR3Inst/u_migDDR3_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_A.ddr_byte_lane_A/ddr_byte_group_io/input_[3].iserdes_dq_.iserdesdq: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+REQP-1959#3 Advisory
+connects_SERDES_RST_driver_not_FF  
+migDDR3Inst/u_migDDR3_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_A.ddr_byte_lane_A/ddr_byte_group_io/input_[4].iserdes_dq_.iserdesdq: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+REQP-1959#4 Advisory
+connects_SERDES_RST_driver_not_FF  
+migDDR3Inst/u_migDDR3_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_A.ddr_byte_lane_A/ddr_byte_group_io/input_[5].iserdes_dq_.iserdesdq: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+REQP-1959#5 Advisory
+connects_SERDES_RST_driver_not_FF  
+migDDR3Inst/u_migDDR3_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_A.ddr_byte_lane_A/ddr_byte_group_io/input_[6].iserdes_dq_.iserdesdq: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+REQP-1959#6 Advisory
+connects_SERDES_RST_driver_not_FF  
+migDDR3Inst/u_migDDR3_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_A.ddr_byte_lane_A/ddr_byte_group_io/input_[7].iserdes_dq_.iserdesdq: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+REQP-1959#7 Advisory
+connects_SERDES_RST_driver_not_FF  
+migDDR3Inst/u_migDDR3_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_A.ddr_byte_lane_A/ddr_byte_group_io/input_[8].iserdes_dq_.iserdesdq: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+REQP-1959#8 Advisory
+connects_SERDES_RST_driver_not_FF  
+migDDR3Inst/u_migDDR3_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_A.ddr_byte_lane_A/ddr_byte_group_io/input_[9].iserdes_dq_.iserdesdq: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+REQP-1959#9 Advisory
+connects_SERDES_RST_driver_not_FF  
+migDDR3Inst/u_migDDR3_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_C.ddr_byte_lane_C/ddr_byte_group_io/input_[0].iserdes_dq_.iserdesdq: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+REQP-1959#10 Advisory
+connects_SERDES_RST_driver_not_FF  
+migDDR3Inst/u_migDDR3_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_C.ddr_byte_lane_C/ddr_byte_group_io/input_[1].iserdes_dq_.iserdesdq: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+REQP-1959#11 Advisory
+connects_SERDES_RST_driver_not_FF  
+migDDR3Inst/u_migDDR3_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_C.ddr_byte_lane_C/ddr_byte_group_io/input_[2].iserdes_dq_.iserdesdq: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+REQP-1959#12 Advisory
+connects_SERDES_RST_driver_not_FF  
+migDDR3Inst/u_migDDR3_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_C.ddr_byte_lane_C/ddr_byte_group_io/input_[4].iserdes_dq_.iserdesdq: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+REQP-1959#13 Advisory
+connects_SERDES_RST_driver_not_FF  
+migDDR3Inst/u_migDDR3_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_C.ddr_byte_lane_C/ddr_byte_group_io/input_[5].iserdes_dq_.iserdesdq: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+REQP-1959#14 Advisory
+connects_SERDES_RST_driver_not_FF  
+migDDR3Inst/u_migDDR3_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_C.ddr_byte_lane_C/ddr_byte_group_io/input_[6].iserdes_dq_.iserdesdq: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+REQP-1959#15 Advisory
+connects_SERDES_RST_driver_not_FF  
+migDDR3Inst/u_migDDR3_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_C.ddr_byte_lane_C/ddr_byte_group_io/input_[7].iserdes_dq_.iserdesdq: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+REQP-1959#16 Advisory
+connects_SERDES_RST_driver_not_FF  
+migDDR3Inst/u_migDDR3_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_C.ddr_byte_lane_C/ddr_byte_group_io/input_[8].iserdes_dq_.iserdesdq: The RST pin should only be driven by a Flip-flop.
 Related violations: <none>
 
 

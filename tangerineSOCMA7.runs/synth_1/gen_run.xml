@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a50tfgg484-1" LaunchTime="1713212566" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/tangerineSOCMA7Top.dcp">
+<GenRun Id="synth_1" LaunchPart="xc7a50tfgg484-1" LaunchTime="1713301089" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/tangerineSOCMA7Top.dcp">
   <File Type="PA-TCL" Name="tangerineSOCMA7Top.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="tangerineSOCMA7Top_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="tangerineSOCMA7Top_reports.tcl"/>
@@ -73,6 +73,12 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/ip/migDDR3/mig_a.prj">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="ScopedToCell" Val="migDDR3"/>
+      </FileInfo>
+    </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
       <Option Name="TopModule" Val="tangerineSOCMA7Top"/>
@@ -106,13 +112,12 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2023">
-      <Desc>Vivado Synthesis Defaults</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2023"/>
     <Step Id="synth_design"/>
   </Strategy>
   <BlockFileSet Type="BlockSrcs" Name="systemRam"/>
   <BlockFileSet Type="BlockSrcs" Name="fontPROM"/>
   <BlockFileSet Type="BlockSrcs" Name="clockingSystem"/>
   <BlockFileSet Type="BlockSrcs" Name="uartFiFo"/>
+  <BlockFileSet Type="BlockSrcs" Name="migDDR3"/>
 </GenRun>

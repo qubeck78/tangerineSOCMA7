@@ -2,7 +2,7 @@
 -- Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
--- Date        : Mon Apr 15 18:32:37 2024
+-- Date        : Tue Apr 16 22:39:32 2024
 -- Host        : Desktop-qUBECk running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode synth_stub
 --               c:/Users/qubec/Documents/Development/ProjektyVHDL/MimasA7/tangerineSOCMA7/tangerineSOCMA7.gen/sources_1/ip/clockingSystem/clockingSystem_stub.vhdl
@@ -17,6 +17,7 @@ entity clockingSystem is
   Port ( 
     clk_out1_50 : out STD_LOGIC;
     clk_out2_100 : out STD_LOGIC;
+    clk_out3_200 : out STD_LOGIC;
     reset : in STD_LOGIC;
     locked : out STD_LOGIC;
     clk_in1 : in STD_LOGIC
@@ -28,6 +29,6 @@ architecture stub of clockingSystem is
 attribute syn_black_box : boolean;
 attribute black_box_pad_pin : string;
 attribute syn_black_box of stub : architecture is true;
-attribute black_box_pad_pin of stub : architecture is "clk_out1_50,clk_out2_100,reset,locked,clk_in1";
+attribute black_box_pad_pin of stub : architecture is "clk_out1_50,clk_out2_100,clk_out3_200,reset,locked,clk_in1";
 begin
 end;

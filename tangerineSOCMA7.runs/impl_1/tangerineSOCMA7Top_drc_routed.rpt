@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
-| Date         : Mon Apr 15 22:25:20 2024
+| Date         : Tue Apr 16 23:04:18 2024
 | Host         : Desktop-qUBECk running 64-bit major release  (build 9200)
 | Command      : report_drc -file tangerineSOCMA7Top_drc_routed.rpt -pb tangerineSOCMA7Top_drc_routed.pb -rpx tangerineSOCMA7Top_drc_routed.rpx
 | Design       : tangerineSOCMA7Top
@@ -24,18 +24,30 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
              Max violations: <unlimited>
-             Violations found: 8
-+-----------+----------+-------------------------+------------+
-| Rule      | Severity | Description             | Violations |
-+-----------+----------+-------------------------+------------+
-| DPOP-1    | Warning  | PREG Output pipelining  | 2          |
-| DPOP-2    | Warning  | MREG Output pipelining  | 4          |
-| PDCN-1569 | Warning  | LUT equation term check | 1          |
-| RTSTAT-10 | Warning  | No routable loads       | 1          |
-+-----------+----------+-------------------------+------------+
+             Violations found: 11
++-----------+----------+--------------------------+------------+
+| Rule      | Severity | Description              | Violations |
++-----------+----------+--------------------------+------------+
+| BUFC-1    | Warning  | Input Buffer Connections | 2          |
+| DPOP-1    | Warning  | PREG Output pipelining   | 2          |
+| DPOP-2    | Warning  | MREG Output pipelining   | 4          |
+| PDCN-1569 | Warning  | LUT equation term check  | 1          |
+| REQP-1709 | Warning  | Clock output buffering   | 1          |
+| RTSTAT-10 | Warning  | No routable loads        | 1          |
++-----------+----------+--------------------------+------------+
 
 2. REPORT DETAILS
 -----------------
+BUFC-1#1 Warning
+Input Buffer Connections  
+Input buffer migDDR3Inst/u_migDDR3_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/gen_dqs_iobuf_HR.gen_dqs_iobuf[0].gen_dqs_diff.u_iobuf_dqs/IBUFDS_0 (in migDDR3Inst/u_migDDR3_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/gen_dqs_iobuf_HR.gen_dqs_iobuf[0].gen_dqs_diff.u_iobuf_dqs macro) has no loads. It is recommended to have an input buffer drive an internal load.
+Related violations: <none>
+
+BUFC-1#2 Warning
+Input Buffer Connections  
+Input buffer migDDR3Inst/u_migDDR3_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/gen_dqs_iobuf_HR.gen_dqs_iobuf[1].gen_dqs_diff.u_iobuf_dqs/IBUFDS_0 (in migDDR3Inst/u_migDDR3_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/gen_dqs_iobuf_HR.gen_dqs_iobuf[1].gen_dqs_diff.u_iobuf_dqs macro) has no loads. It is recommended to have an input buffer drive an internal load.
+Related violations: <none>
+
 DPOP-1#1 Warning
 PREG Output pipelining  
 DSP picorv32Inst/pcpi_mul/rd0 output picorv32Inst/pcpi_mul/rd0/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
@@ -68,7 +80,12 @@ Related violations: <none>
 
 PDCN-1569#1 Warning
 LUT equation term check  
-Used physical LUT pin 'A1' of cell UARTInst/rxFiFoInst/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.user_valid_i_1 (pin UARTInst/rxFiFoInst/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.user_valid_i_1/I1) is not included in the LUT equation: 'O6=(A5)+((~A5)*(~A3)*A4)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Used physical LUT pin 'A5' of cell UARTInst/rxFiFoInst/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.user_valid_i_1 (pin UARTInst/rxFiFoInst/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.user_valid_i_1/I1) is not included in the LUT equation: 'O6=(A6)+((~A6)*(~A2)*A3)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+REQP-1709#1 Warning
+Clock output buffering  
+PLLE2_ADV connectivity violation. The signal migDDR3Inst/u_migDDR3_mig/u_ddr3_infrastructure/pll_clk3_out on the migDDR3Inst/u_migDDR3_mig/u_ddr3_infrastructure/plle2_i/CLKOUT3 pin of migDDR3Inst/u_migDDR3_mig/u_ddr3_infrastructure/plle2_i does not drive the same kind of BUFFER load as the other CLKOUT pins. Routing from the different buffer types will not be phase aligned.
 Related violations: <none>
 
 RTSTAT-10#1 Warning
